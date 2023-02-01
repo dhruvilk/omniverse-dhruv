@@ -1,6 +1,6 @@
 # VSCode ROS2 Workspace Template
 
-This is a fork of a repository created for my independent study with Dr. Pantelis Monogioudis at the New Jersey Institute of Technology. All of the work that I have done is in the branch omniverse-dhruv. This template will get you set up using ROS2 with VSCode as your IDE. 
+This is a copy of a repository created for my independent study with Dr. Pantelis Monogioudis at the New Jersey Institute of Technology. This template will get you set up using ROS2 with VSCode as your IDE. 
 
 See [how I develop with vscode and ros2](https://www.allisonthackston.com/articles/vscode_docker_ros2.html) for a more in-depth look on how to use this workspace.
 
