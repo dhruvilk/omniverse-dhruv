@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <node pkg="omniverse_vrx" type="omniverse_station_keeping.py" name="omniverse_station_keeping" output="screen"/>
+
+  <node pkg="omniverse_vrx" type="omniverse_inverse_kinematics.py" name="omniverse_inverse_kinematics" output="screen"/>
+
+</launch>

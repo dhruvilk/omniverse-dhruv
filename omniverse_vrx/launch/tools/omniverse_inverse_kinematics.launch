@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <node pkg="omniverse_vrx" type="omniverse_inverse_kinematics.py" name="omniverse_inverse_kinematics" output="screen"/>
+
+  <node pkg="rqt_publisher" type="rqt_publisher" name="omniverse_cmd_vel_pub"/>
+
+  <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="inverse_kinematics_config"/>
+
+</launch>

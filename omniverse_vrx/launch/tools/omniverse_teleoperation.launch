@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <node pkg="omniverse_vrx" type="omniverse_teleoperation.py" name="omniverse_teleoperation" output="screen"/>
+
+</launch>

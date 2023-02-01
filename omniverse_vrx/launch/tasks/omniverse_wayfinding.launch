@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <arg name="headless" default="false"/>
+  
+  <include file="$(find vrx_gazebo)/launch/wayfinding.launch">
+  
+    <arg name="world" value="$(find vrx_gazebo)/worlds/wayfinding_task.world"/>
+  
+    <arg name="urdf" value="$(find omniverse_vrx)/urdf/omniverse.urdf"/>
+    
+    <arg name="x" default="-532"/>
+    <arg name="y" default="162"/>
+    <arg name="z" default="0.1"/>
+    <arg name="P" default="0"/>
+    <arg name="R" default="0"/>
+    <arg name="Y" default="1"/>
+    
+    <arg name="gui" value="false" if="$(arg headless)"/>
+    
+    <arg name="paused" value="true" unless="$(arg headless)"/>
+    
+  </include>
+  
+  <node pkg="omniverse_vrx" type="omniverse_wayfinding.py" name="omniverse_wayfinding" output="screen"/>
+
+  <node pkg="omniverse_vrx" type="omniverse_inverse_kinematics.py" name="omniverse_inverse_kinematics" output="screen"/>
+  
+  <group unless="$(arg headless)">
+    <node ns="wamv" pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+      <param name="gui" value="false"/>
+    </node>
+    <node ns="wamv" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+    <arg name="rviz_config" default="$(find omniverse_vrx)/rviz/omniverse_wayfinding.rviz"/>
+    <node pkg="rviz" type="rviz" name="wayfinding_viz" args="-d $(arg rviz_config)"/>
+  </group>
+
+</launch>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <node pkg="omniverse_vrx" name="omniverse_mission_manager" type="omniverse_mission_manager.py" output="screen"/>
+
+  <node pkg="omniverse_vrx" type="omniverse_scene_perception.py" name="omniverse_scene_perception" output="screen"/>
+
+  <node pkg="omniverse_vrx" type="omniverse_gymkhana_challenge.py" name="omniverse_gymkhana_challenge" output="screen"/>
+    
+  <node pkg="omniverse_vrx" type="omniverse_inverse_kinematics.py" name="omniverse_inverse_kinematics" output="screen"/>
+
+</launch>

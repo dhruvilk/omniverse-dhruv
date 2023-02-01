@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find vrx_gazebo)/launch/vrx.launch">
+    
+    <arg name="world" value="$(find omniverse_vrx)/worlds/vrx_course.world"/>
+  
+    <arg name="urdf" value="$(find omniverse_vrx)/urdf/omniverse.urdf"/>
+    
+    <arg name="x" default="-532"/>
+    <arg name="y" default="162"/>
+    <arg name="z" default="0.1"/>
+    <arg name="P" default="0"/>
+    <arg name="R" default="0"/>
+    <arg name="Y" default="1"/>
+    
+  </include>
+
+</launch>

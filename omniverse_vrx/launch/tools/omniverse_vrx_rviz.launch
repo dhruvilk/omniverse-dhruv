@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <node ns="wamv" pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+    <param name="gui" value="false"/>
+  </node>
+  
+  <node ns="wamv" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+
+  <arg name="rviz_config" default="$(find omniverse_vrx)/rviz/omniverse_vrx.rviz"/>
+  <node pkg="rviz" type="rviz" name="omniverse_viz" args="-d $(arg rviz_config)"/>
+
+</launch>

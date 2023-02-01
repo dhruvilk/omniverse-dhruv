@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <param name="component_yaml" value="$(find omniverse_vrx)/wamv/component_config.yaml"/>
+  <param name="thruster_yaml" value="$(find omniverse_vrx)/wamv/thruster_config.yaml"/>
+  <param name="wamv_locked" value="false"/>
+
+  <param name="wamv_target" value="$(find omniverse_vrx)/urdf/omniverse.urdf"/>
+
+  <param name="wamv_gazebo" value="$(find wamv_gazebo)/urdf/wamv_gazebo.urdf.xacro"/>
+  <param name="components_dir" value="$(find wamv_gazebo)/urdf/components"/>  
+  <param name="thrusters_dir" value="$(find wamv_description)/urdf/thrusters"/>
+
+  <node name="wamv_generator" pkg="vrx_gazebo" type="generate_wamv.py" output="screen" required="true"/>
+
+</launch>
